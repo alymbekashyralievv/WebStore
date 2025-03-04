@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <div className="container">
       <header className="flex h-[76px] items-center">
-        <div className="flex gap-[10px]">
+        <div className="flex gap-[10px]  items-center">
           <img className="w-[38px]" src="/src/assets/behoof.svg" alt="" />
           <h2 className="text-[34px] font-bold">Behoof</h2>
           <p>
