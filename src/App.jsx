@@ -4,8 +4,17 @@ import DetailPage from "./pages/detail-page/DetailPage";
 import NavBar from "./nav-bar/NavBar";
 import NotFound from "./pages/not-found/NotFound";
 import Header from "./components/header/Header";
+import { useEffect } from "react";
+import { supabase } from "./supabase";
 
 const App = () => {
+  const getData = async () => {
+    let { data: catalog, error } = await supabase.from("catalog").select("*");
+    console.log(catalog);
+  };
+  useEffect(() => {
+    getData();
+  });
   return (
     <div>
       <Router>
