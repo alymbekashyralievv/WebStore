@@ -1,4 +1,6 @@
 
+
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/home-page/HomePage";
 import DetailPage from "./pages/detail-page/DetailPage";
@@ -13,18 +15,21 @@ const App = () => {
     let { data: catalog, error } = await supabase.from("catalog").select("*");
     console.log(catalog);
   };
+
   useEffect(() => {
     getData();
-  });
+  }, []);
+
   return (
     <div>
       <Router>
         <NavBar />
         <Header />
         <Routes>
+          
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/detail" element={<DetailPage />} />
+          <Route path="/detail/:id" element={<DetailPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
@@ -32,4 +37,5 @@ const App = () => {
   );
 };
 
-export default App
+export default App;
+

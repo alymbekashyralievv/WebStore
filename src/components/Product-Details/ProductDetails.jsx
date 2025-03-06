@@ -1,28 +1,26 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { supabase } from "../../supabase";
 
-const DetailPage = () => {
-  const { id } = useParams();
+const ProductDetails = ({ productId }) => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const { data, error } = await supabase.from("catalog").select("*").eq("id", id).single();
-
-      if (error) {
-        setError("Ошибка загрузки товара");
-      } else {
+      try {
+        const response = await fetch(`https://example.com/api/products/${productId}`);
+        if (!response.ok) throw new Error("Ошибка загрузки данных");
+        const data = await response.json();
         setProduct(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
       }
-
-      setLoading(false);
     };
 
     fetchProduct();
-  }, [id]);
+  }, [productId]);
 
   if (loading) return <p className="text-center text-gray-500 text-lg">Загрузка...</p>;
   if (error) return <p className="text-center text-red-500 text-lg">{error}</p>;
@@ -47,13 +45,4 @@ const DetailPage = () => {
   );
 };
 
-export default DetailPage;
-// import React from 'react'
-
-// const DetailPage = () => {
-//   return (
-//     <div></div>
-//   )
-// }
-
-// export default DetailPage
+export default ProductDetails;
