@@ -14,7 +14,7 @@ const App = () => {
   };
   useEffect(() => {
     getData();
-  });
+  },[]);
   return (
     <div>
       <Router>
