@@ -12,41 +12,48 @@ const Header = () => {
       <header className="flex h-[76px] items-center">
         <div className="flex gap-[10px]">
           <img className="w-[38px]" src="/src/assets/behoof.svg" alt="" />
-          <h2 className="text-[34px] font-bold">Behoof</h2>
-          <p>
+          <h2
+            // onClick={() => {}}
+            className="text-[34px] font-bold cursor-pointer"
+          >
+            Behoof
+          </h2>
+          <p className="cursor-pointer">
             Лучшие цены <br /> в интернет-магазинaх
           </p>
         </div>
 
-        <button
-          className="bg-[#f9553c] w-[200px] h-[52px] flex items-center  justify-center gap-[10px] ml-[30px] text-white rounded-[10px]"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          Каталог товаров <IoIosArrowDown />
-        </button>
-        {isOpen && (
-          <div>
-            <ul className="">
-              <li className="">Товар 1</li>
-              <li className="">Товар 2</li>
-              <li className="">Товар 3</li>
-            </ul>
-          </div>
-        )}
+        <div className="relative">
+          <button
+            className="bg-[#f9553c] w-[200px] h-[52px] flex items-center  justify-center gap-[10px] ml-[30px] text-white rounded-[10px] cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            Каталог товаров <IoIosArrowDown />
+          </button>
+          {isOpen && (
+            <div className="absolute left-0  mt-2  bg-white shadow-md rounded-[10px] w-[200px]">
+              <ul className="">
+                <li className="">Товар 1</li>
+                <li className="">Товар 2</li>
+                <li className="">Товар 3</li>
+              </ul>
+            </div>
+          )}
+        </div>
 
         <div className="relative flex gap-[20px]">
-          <CiSearch className="absolute left-[7px] top-[14px] text-[25px]" />
+          <CiSearch className="absolute left-[7px] top-[14px] text-[25px] " />
           <input
             className="h-[52px] rounded-[10px] bg-[#f4efef] pl-[35px] w-[640px]"
             placeholder="Поиск товаров"
           />
-          <button className="w-[52px] h-[52px] bg-[#f4efef] rounded-[10px] flex items-center justify-center">
+          <button className="w-[52px] h-[52px] bg-[#f4efef] rounded-[10px] flex items-center justify-center cursor-pointer">
             <GoHeart />
           </button>
-          <button className="w-[52px] h-[52px] bg-[#f4efef] rounded-[10px] flex items-center justify-center">
+          <button className="w-[52px] h-[52px] bg-[#f4efef] rounded-[10px] flex items-center justify-center cursor-pointer">
             <SlChart />
           </button>
-          <button className="w-[52px] h-[52px] bg-[#f4efef] rounded-[10px] flex items-center justify-center">
+          <button className="w-[52px] h-[52px] bg-[#f4efef] rounded-[10px] flex items-center justify-center cursor-pointer">
             <HiOutlineUser />
           </button>
         </div>

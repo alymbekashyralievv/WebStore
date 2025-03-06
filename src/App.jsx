@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/home-page/HomePage";
 import DetailPage from "./pages/detail-page/DetailPage";
-import NavBar from "./nav-bar/NavBar";
+// import NavBar from "./nav-bar/NavBar";
 import NotFound from "./pages/not-found/NotFound";
 import Header from "./components/header/Header";
-import { useEffect } from "react";
+import { useEffect } from "react";  
 import { supabase } from "./supabase";
 
 const App = () => {
@@ -18,13 +18,13 @@ const App = () => {
   return (
     <div>
       <Router>
-        <NavBar />
+        {/* <NavBar /> */}
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/detail" element={<DetailPage />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/notfound" element={<NotFound />} />
         </Routes>
       </Router>
     </div>
