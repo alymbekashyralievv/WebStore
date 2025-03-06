@@ -4,16 +4,23 @@ import HomePage from "./pages/home-page/HomePage";
 import DetailPage from "./pages/detail-page/DetailPage";
 import NavBar from "./nav-bar/NavBar";
 import NotFound from "./pages/not-found/NotFound";
-import Header from "./components/Header"
-import Footer from "./components/Footer";
+import { useEffect } from "react";
+import { supabase } from "./supabase";
+import Header from "./components/Header/Header";
 
 const App = () => {
+  const getData = async () => {
+    let { data: catalog, error } = await supabase.from("catalog").select("*");
+    console.log(catalog);
+  };
+  useEffect(() => {
+    getData();
+  });
   return (
     <div>
       <Router>
         <NavBar />
         <Header />
-        <Footer/>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
@@ -25,4 +32,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App
