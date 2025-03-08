@@ -9,6 +9,7 @@ import NotFound from "./pages/not-found/NotFound";
 import { useEffect } from "react";
 import { supabase } from "./supabase";
 import Header from "./components/header/Header";
+import ProductDetails from "./components/Product-Details/ProductDetails";
 
 const App = () => {
   const getData = async () => {
@@ -26,10 +27,10 @@ const App = () => {
         <NavBar />
         <Header />
         <Routes>
-          
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/detail/:id" element={<DetailPage />} />
+          {/* <Route path="/detail/:id" element={<DetailPage />} /> */}
+          <Route path="/detail/:id" element={<ProductDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
