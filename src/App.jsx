@@ -1,30 +1,70 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/home-page/HomePage";
-import DetailPage from "./pages/detail-page/DetailPage";
-import NavBar from "./nav-bar/NavBar";
+// import DetailPage from "./pages/detail-page/DetailPage";
+// import NavBar from "./nav-bar/NavBar";
 import NotFound from "./pages/not-found/NotFound";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "./supabase";
-import Header from "./components/Header/Header";
+
+import ProductDetails from "./components/Product-Details/ProductDetails";
+import Header from "./components/header/Header";
 
 const App = () => {
-  const getData = async () => {
-    let { data: catalog, error } = await supabase.from("catalog").select("*");
-    console.log(catalog);
-  };
+  const [catalog, setCatalog] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [supProducts, setSupProducts] = useState([]);
+  const [openCatalogId, setOpenCatalogId] = useState(null);
+  const [openProductId, setOpenProductId] = useState(null);
+
   useEffect(() => {
-    getData();
-  });
+    const fetchCatalog = async () => {
+      try {
+        const { data, error } = await supabase.from("catalog").select("*");
+        if (error) throw error;
+        setCatalog(data);
+      } catch (error) {
+        console.error("Ошибка загрузки каталога:", error.message);
+      }
+    };
+
+    fetchCatalog();
+  }, []);
+
+  const fetchProducts = async (catalogId) => {
+    try {
+      const { data, error } = await supabase
+        .from("products")
+        .select("*")
+        .eq("catalog_id", catalogId);
+      if (error) throw error;
+      setProducts(data);
+    } catch (error) {
+      console.error("Ошибка загрузки товаров:", error.message);
+    }
+  };
+
+  const fetchSupProducts = async (productId) => {
+    try {
+      const { data, error } = await supabase
+        .from("sup_products")
+        .select("*")
+        .eq("product_id", productId);
+      if (error) throw error;
+      setSupProducts(data);
+    } catch (error) {
+      console.error("Ошибка загрузки моделей:", error.message);
+    }
+  };
+
   return (
     <div>
       <Router>
-        <NavBar />
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/detail" element={<DetailPage />} />
+          {/* <Route path="/detail/:id" element={<DetailPage />} /> */}
+          <Route path="/detail/:id" element={<ProductDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
@@ -32,4 +72,4 @@ const App = () => {
   );
 };
 
-export default App
+export default App;

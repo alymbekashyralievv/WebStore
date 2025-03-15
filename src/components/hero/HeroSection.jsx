@@ -2,7 +2,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 const HeroSection = () => {
   return (
-    <div className="container flex gap-[32px]">
+    <div className="app-container flex gap-[52px]">
       <div className="w-[879px] h-[308px] rounded-[10px] bg-[#f4efef] p-[30px] flex flex-col gap-[20px] mt-[48px]   ">
         <h2 className="text-[48px] font-bold">
           <span className="text-[#fe6b27]">1.8 млн</span> товаров в
