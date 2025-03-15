@@ -6,7 +6,7 @@ import NavBar from "./nav-bar/NavBar";
 import NotFound from "./pages/not-found/NotFound";
 import { useEffect } from "react";
 import { supabase } from "./supabase";
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
 
 const App = () => {
   const getData = async () => {
