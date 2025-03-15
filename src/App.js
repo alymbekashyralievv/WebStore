@@ -1,6 +1,6 @@
 import React from "react";
 import ProductInfo from "./components/ProductInfo";
-import "./App.css"; // Импорт стилей
+import "./App.css"; 
 
 const App = () => {
   const product = {
