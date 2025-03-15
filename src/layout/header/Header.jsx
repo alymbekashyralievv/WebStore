@@ -101,6 +101,7 @@ const Header = () => {
             Каталог товаров <IoIosArrowDown />
           </button>
           {isOpen && (
+<<<<<<< HEAD:src/components/Header/Header.jsx
             <div className="absolute bg-white shadow-md rounded-[10px]  ">
               <div className="">
                 <h1 className="text-3xl font-semibold mb-4">Каталог товаров</h1>
@@ -163,6 +164,19 @@ const Header = () => {
                   </div>
                 ))}
               </div>
+=======
+            <div className="absolute left-0  mt-2  bg-white shadow-md rounded-[10px] w-[200px]">
+              <ul className="space-y-2 text-gray-700">
+                <li className="hover:bg-gray-100 p-2 rounded">Смартфоны</li>
+                <li className="hover:bg-gray-100 p-2 rounded">Ноутбуки</li>
+                <li className="hover:bg-gray-100 p-2 rounded">Аксессуары</li>
+                <li className="hover:bg-gray-100 p-2 rounded">Планшеты</li>
+                <li className="hover:bg-gray-100 p-2 rounded">Умные часы</li>
+                <li className="hover:bg-gray-100 p-2 rounded">Игровые приствки</li>
+                <li className="hover:bg-gray-100 p-2 rounded">Наушники</li>
+                <li className="hover:bg-gray-100 p-2 rounded">Портативные колонки</li>
+              </ul>
+>>>>>>> b0e9a9524f18a640fda725d924f8feeed9c010d4:src/layout/header/Header.jsx
             </div>
           )}
         </div>

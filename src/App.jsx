@@ -1,7 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/home-page/HomePage";
+// import DetailPage from "./pages/detail-page/DetailPage";
+// import NavBar from "./nav-bar/NavBar";
 import NotFound from "./pages/not-found/NotFound";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import Header from "./components/header/Header";
+import { useEffect } from "react";
 import { supabase } from "./supabase";
 import Header from "./components/header/Header";
 import ProductDetails from "./components/Product-Details/ProductDetails";
