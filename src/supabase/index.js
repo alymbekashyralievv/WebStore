@@ -27,6 +27,5 @@ name: "Lenovo",
 
 sup_products = {
 products_id: 
-
 }
 */
