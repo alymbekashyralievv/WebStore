@@ -10,7 +10,7 @@ import Header from "./components/Header";
 
 const App = () => {
   const getData = async () => {
-    let { data: catalog, error } = await supabase.from("catalog").select("*");
+    let { data: catalog } = await supabase.from("catalog").select("*");
     console.log(catalog);
   };
   useEffect(() => {

@@ -116,8 +116,6 @@ const Header = () => {
               ))}
             </Menu>
           </div>
-
-          
           {selectedCategory?.subcategories && expandedCategories[selectedCategory.id] && (
             <div className="w-1/4 max-h-[400px] overflow-y-auto rounded-[12px] shadow-md p-0">
               <h2 className="text-xl font-bold mb-4">{selectedCategory.name}</h2>
