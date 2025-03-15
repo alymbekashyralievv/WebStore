@@ -95,7 +95,7 @@ const Header = () => {
 
         <div className="relative">
           <button
-            className="bg-[#f9553c] w-[200px] h-[52px] flex items-center  justify-center gap-[10px] ml-[30px] text-white rounded-[10px] cursor-pointer"
+            className="bg-[#f9553c] w-[200px] h-[52px] flex items-center  justify-center gap-[10px] ml-[40px] text-white rounded-[10px] cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
           >
             Каталог товаров <IoIosArrowDown />
@@ -167,7 +167,7 @@ const Header = () => {
           )}
         </div>
 
-        <div className="relative flex gap-[20px]">
+        <div className="relative flex gap-[25px]">
           <CiSearch className="absolute left-[7px] top-[14px] text-[25px] " />
           <input
             className="h-[52px] rounded-[10px] bg-[#f4efef] pl-[35px] w-[640px]"
