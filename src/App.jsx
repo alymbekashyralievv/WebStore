@@ -3,12 +3,11 @@ import HomePage from "./pages/home-page/HomePage";
 // import DetailPage from "./pages/detail-page/DetailPage";
 // import NavBar from "./nav-bar/NavBar";
 import NotFound from "./pages/not-found/NotFound";
-import { useEffect } from "react";
-import Header from "./components/header/Header";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "./supabase";
-import Header from "./components/header/Header";
+
 import ProductDetails from "./components/Product-Details/ProductDetails";
+import Header from "./components/header/Header";
 
 const App = () => {
   const [catalog, setCatalog] = useState([]);
