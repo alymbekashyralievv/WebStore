@@ -8,6 +8,7 @@ import { supabase } from "./supabase";
 
 import ProductDetails from "./components/Product-Details/ProductDetails";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 const App = () => {
   const [catalog, setCatalog] = useState([]);
@@ -15,20 +16,6 @@ const App = () => {
   const [supProducts, setSupProducts] = useState([]);
   const [openCatalogId, setOpenCatalogId] = useState(null);
   const [openProductId, setOpenProductId] = useState(null);
-
-  useEffect(() => {
-    const fetchCatalog = async () => {
-      try {
-        const { data, error } = await supabase.from("catalog").select("*");
-        if (error) throw error;
-        setCatalog(data);
-      } catch (error) {
-        console.error("Ошибка загрузки каталога:", error.message);
-      }
-    };
-
-    fetchCatalog();
-  }, []);
 
   const fetchProducts = async (catalogId) => {
     try {
@@ -64,9 +51,10 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           {/* <Route path="/detail/:id" element={<DetailPage />} /> */}
-          <Route path="/detail/:id" element={<ProductDetails />} />
+          <Route path="/product/:productId" element={<ProductDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
