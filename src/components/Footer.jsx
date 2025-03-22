@@ -1,23 +1,23 @@
 
 
 import React from 'react';
-import { FaInstagram, FaTelegramPlane, FaYoutube } from 'react-icons/fa'; // Инстаграм, Телеграмм, Ютуб
-import { SiTiktok } from 'react-icons/si'; // TikTok из react-icons
+import { FaInstagram, FaTelegramPlane, FaYoutube } from 'react-icons/fa'; 
+import { SiTiktok } from 'react-icons/si'; 
 import { FaVk } from "react-icons/fa6";
 
-import './Footer.css'; // Подключим CSS файл для футера
+import './Footer.css'; 
 import Logo from "../assets/Logo.svg"
 
 const Footer = () => {
   return (
     <footer>
-      <div className="footer-container">
-        {/* Верхняя часть футера с логотипом и иконками соцсетей */}
+      <div className="footer-container ">
+        
         <div className="footer-top">
           <div className="logo">
             <img src={Logo} alt="Логотип" />
             <h1 className='behoof text-[173px] font-bold'>Behoof</h1>
-            <p className='ml-[240px] mt-[20px] text-gray-500'>Мы в соц сетях</p>
+            <p className='ml-[200px] mt-[20px] text-gray-500'>Мы в соц сетях</p>
           </div>
          
           
@@ -46,7 +46,7 @@ const Footer = () => {
           <div className="footer-column">
             <h3 className='text-gray-500 '>Пользователю</h3>
             <p>Связаться с нами</p>
-            <p>Поддерка пользователей</p>
+            <p>Поддержка пользователей</p>
             <p>FAQ & Руководства</p>
             <p>Политика конфиденциальности</p>
             <p>Пользовательское соглашение</p>

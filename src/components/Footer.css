@@ -5,13 +5,13 @@ footer {
     color: #161515;
     padding: 40px 0;
     display: flex;
-    position: absolute; /* Фиксируем иконки */
-    left: 10px; /* Располагаем иконки в левом углу */
-    bottom: 20px; /* Отступ снизу */
+    position: absolute; 
+    left: 10px; 
+    bottom: -770px;
   }
   
   .footer-container {
-    width: 2280px;
+    width: 1500px;
     height: 300px;
     margin: 0 auto;
     display: flex;
@@ -28,14 +28,14 @@ footer {
   }
   
   .logo img {
-    width: 38px; /* Задайте нужный размер для логотипа */
-    margin-left: 240px;
+    width: 38px; 
+    margin-left: 200px;
   }
 
   .behoof {
-  margin-left: 290px;
+  margin-left: 260px;
   margin-top: -45px;
-    font-size: 32px; /* Размер шрифта для "Behoof" */
+    font-size: 32px;
     color: #1d1a1a;
 
     
@@ -48,7 +48,7 @@ footer {
     position: absolute; 
     /* left: 10px; */
   margin-top: 170px;
-  margin-left: 230px;
+  margin-left: 190px;
     
   }
   
@@ -84,12 +84,12 @@ footer {
     line-height: 1.6;
   }
   .footer-column p {
-    margin-bottom: 10px; /* Отступ между параграфами */
+    margin-bottom: 10px; 
   }
 
   .footer-line {
-    height: 2px; /* Высота линии */
+    height: 2px; 
     background-color:  #ECEEEF;
-    width: 100%; /* Линия занимает всю ширину */
-    margin-top: 50px; /* Отступ сверху, чтобы линия была ниже контента футера */
+    width: 100%; 
+    margin-top: 50px; 
   }

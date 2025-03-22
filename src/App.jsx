@@ -7,7 +7,12 @@ import { useEffect, useState } from "react";
 import { supabase } from "./supabase";
 
 import ProductDetails from "./components/Product-Details/ProductDetails";
-import Header from "./components/header/Header";
+import Header from "./components/Header/Header";
+import Category from "./components/category/Category";
+import Favorite from "./components/favorite/Favorite";
+import Register from "./components/registaer/Register";
+import Cart from "./components/cart/Cart";
+
 
 const App = () => {
   const [catalog, setCatalog] = useState([]);
@@ -65,6 +70,10 @@ const App = () => {
           <Route path="/home" element={<HomePage />} />
           {/* <Route path="/detail/:id" element={<DetailPage />} /> */}
           <Route path="/detail/:id" element={<ProductDetails />} />
+          <Route path="/cate" element={<Category />} />
+          <Route path="/favorites" element={<Favorite />} />
+          <Route path="/signin" element={<Register />} />
+          <Route path="/cart" element={<Cart/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
