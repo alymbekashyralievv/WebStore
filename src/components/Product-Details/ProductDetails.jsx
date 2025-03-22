@@ -111,7 +111,7 @@ const ProductDetails = () => {
   return (
     <div className="app-container">
       <div className="flex gap-[20px]">
-        <div className="border border-[red]">
+        <div className="">
           <div className="mr-[300px]">
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -143,7 +143,7 @@ const ProductDetails = () => {
             ))}
           </div>
           <div className="border-[#F2F5F9] border-2 p-[20px] rounded-[12px]">
-            <h3 className="font-semibold">Характеристики Смартфонa {name}</h3>
+            <h3 className="font-semibold">Характеристики {name}</h3>
             <div className="flex text-gray-500 gap-[20px] my-[20px]">
               <p className="bg-[#F6F7FA] rounded-[8px] px-[12px] py-[8px]">
                 Камера <span className="text-black">{camera}</span>
@@ -191,7 +191,7 @@ const ProductDetails = () => {
             <p className="h-[312px] w-[617px]">{description}</p>
           </div>
         </div>
-        <div className="border border-[#f43232]">
+        <div className="">
           <h3 className="font-extrabold"> {name}</h3>
           <div className="flex gap-[30px]">
             <div className="text-green-500">{rating} Оценка экспертов</div>
@@ -219,35 +219,35 @@ const ProductDetails = () => {
               </div>
               <h3>Батарея</h3>
               <div className="flex gap-[3px]">
-                <div className="bg-red-500 h-1 rounded-[10px] w-20"></div>
-                <div className="bg-red-500 h-1 rounded-[10px] w-20"></div>
-                <div className="bg-gray-300 h-1 rounded-[10px] w-20"></div>
-                <div className="bg-gray-300 h-1 rounded-[10px] w-20"></div>
-                <div className="bg-gray-300 h-1 rounded-[10px] w-20"></div>
+                <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
+                <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
+                <div className="bg-gray-300 h-1.5 rounded-[10px] w-20"></div>
+                <div className="bg-gray-300 h-1.5 rounded-[10px] w-20"></div>
+                <div className="bg-gray-300 h-1.5 rounded-[10px] w-20"></div>
               </div>
               <h3>Дисплей</h3>
               <div className="flex gap-[3px]">
                 <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
                 <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
-                <div className="bg-red-500 h-1.5.5 rounded-[10px] w-20"></div>
+                <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
                 <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
                 <div className="bg-gray-300 h-1.5 rounded-[10px] w-20"></div>
               </div>
               <h3>Камера</h3>
               <div className="flex gap-[3px]">
-                <div className="bg-red-500 h-1 rounded-[10px] w-20"></div>
-                <div className="bg-red-500 h-1 rounded-[10px] w-20"></div>
-                <div className="bg-red-500 h-1 rounded-[10px] w-20"></div>
-                <div className="bg-red-500 h-1 rounded-[10px] w-20"></div>
-                <div className="bg-red-500 h-1 rounded-[10px] w-20"></div>
+                <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
+                <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
+                <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
+                <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
+                <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
               </div>
               <h3>Ответ</h3>
               <div className="flex gap-[3px]">
-                <div className="bg-red-500 h-1 rounded-[10px] w-20"></div>
-                <div className="bg-red-500 h-1 rounded-[10px] w-20"></div>
-                <div className="bg-red-500 h-1 rounded-[10px] w-20"></div>
-                <div className="bg-red-500 h-1 rounded-[10px] w-20"></div>
-                <div className="bg-red-500 h-1 rounded-[10px] w-20"></div>
+                <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
+                <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
+                <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
+                <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
+                <div className="bg-red-500 h-1.5 rounded-[10px] w-20"></div>
               </div>
               <h3>Портативность</h3>
               <div className="flex gap-[3px]">
@@ -287,7 +287,7 @@ const ProductDetails = () => {
               <h3 className="font-medium mt-4">Память:</h3>
               {memory.map((m, index) => (
                 <button
-                  className="border-2 border-gray-300 rounded text-gray-500 px-4 py-2"
+                  className="border-2 border-gray-300 rounded text-gray-500 px-4 py-2 focus:border-blue-700"
                   key={index}
                 >
                   {m} ГБ

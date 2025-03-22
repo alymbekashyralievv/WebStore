@@ -15,7 +15,6 @@ import { supabase } from "../../supabase";
 const Header = () => {
   const navigate = useNavigate();
 
-  // Функция для перехода на страницу информации о товаре
   const handleProductClick = (productId) => {
     navigate(`/product/${productId}`);
   };
@@ -170,7 +169,7 @@ const Header = () => {
                     key={subProduct.id}
                     onClick={() => handleProductClick(subProduct.id)}
                     className="bg-gray-200 border-none p-2 rounded-b-[8px] cursor-pointer hover:bg-gray-300"
-                  > 
+                  >
                     {subProduct.name}
                   </Menu.Item>
                 ))}

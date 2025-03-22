@@ -6,9 +6,9 @@ import Logo from "../../assets/Logo.svg";
 
 const Footer = () => {
   return (
-    <footer className="app-container">
-      <div className="footer-container">
-        <div className="footer-top">
+    <footer className="app-container ">
+      <div className="footer-container ">
+        <div v className="footer-top">
           <div className="logo">
             <img src={Logo} alt="Логотип" />
             <h1 className="text-[173px] behoof font-bold">Behoof</h1>

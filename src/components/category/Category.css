@@ -1,0 +1,14 @@
+.mySwiper {
+  display: flex;
+  text-align: center;
+}
+
+.clip {
+  clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 95%);
+}
+
+.swiperClass {
+  -webkit-box-shadow: 0px 3px 37px 15px rgba(18, 44, 64, 0.24);
+  -moz-box-shadow: 0px 3px 37px 15px rgba(18, 44, 64, 0.24);
+  box-shadow: 0px 3px 37px 15px rgba(18, 44, 64, 0.24);
+}
