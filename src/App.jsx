@@ -3,9 +3,6 @@ import HomePage from "./pages/home-page/HomePage";
 // import DetailPage from "./pages/detail-page/DetailPage";
 // import NavBar from "./nav-bar/NavBar";
 import NotFound from "./pages/not-found/NotFound";
-import { useEffect, useState } from "react";
-import { supabase } from "./supabase";
-
 import ProductDetails from "./components/Product-Details/ProductDetails";
 import Header from "./components/Header/Header";
 import Category from "./components/category/Category";
@@ -13,54 +10,9 @@ import Favorite from "./components/favorite/Favorite";
 import Register from "./components/registaer/Register";
 import Cart from "./components/cart/Cart";
 
+import Footer from "./components/footer/Footer";
 
 const App = () => {
-  const [catalog, setCatalog] = useState([]);
-  const [products, setProducts] = useState([]);
-  const [supProducts, setSupProducts] = useState([]);
-  const [openCatalogId, setOpenCatalogId] = useState(null);
-  const [openProductId, setOpenProductId] = useState(null);
-
-  useEffect(() => {
-    const fetchCatalog = async () => {
-      try {
-        const { data, error } = await supabase.from("catalog").select("*");
-        if (error) throw error;
-        setCatalog(data);
-      } catch (error) {
-        console.error("Ошибка загрузки каталога:", error.message);
-      }
-    };
-
-    fetchCatalog();
-  }, []);
-
-  const fetchProducts = async (catalogId) => {
-    try {
-      const { data, error } = await supabase
-        .from("products")
-        .select("*")
-        .eq("catalog_id", catalogId);
-      if (error) throw error;
-      setProducts(data);
-    } catch (error) {
-      console.error("Ошибка загрузки товаров:", error.message);
-    }
-  };
-
-  const fetchSupProducts = async (productId) => {
-    try {
-      const { data, error } = await supabase
-        .from("sup_products")
-        .select("*")
-        .eq("product_id", productId);
-      if (error) throw error;
-      setSupProducts(data);
-    } catch (error) {
-      console.error("Ошибка загрузки моделей:", error.message);
-    }
-  };
-
   return (
     <div>
       <Router>
@@ -74,8 +26,10 @@ const App = () => {
           <Route path="/favorites" element={<Favorite />} />
           <Route path="/signin" element={<Register />} />
           <Route path="/cart" element={<Cart/>} />
+          <Route path="/product/:productId" element={<ProductDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

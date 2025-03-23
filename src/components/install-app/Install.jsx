@@ -1,54 +1,70 @@
-import { useNavigate } from "react-router-dom";
-
 const Install = () => {
-  const navigate = useNavigate();
   return (
-    <div className="app-container   ">
-      <div className="relative inline-block ">
+    <div className="app-container">
+      <div className="inline-block relative">
         <h2 className="text-[24px]">
           Наша цель - создать фантастический <br /> сервис для всех потребителей
         </h2>
         <div className="flex">
           <div>
-            <h1 className="text-[48px] text-[#fe6b27]">5</h1>
-            Lorem ipsum dolor sit amet consectetur. Rhoncus risus nunc a
-            pharetra viverra enim nunc.
+            <h1 className="text-[#fe6b27] text-[48px] w-[200px] cursor-pointer font-bold">
+              1 million
+            </h1>
+            <p className="cursor-pointer">
+              products are available in our service with all the necessary data
+              for making a purchase decision
+            </p>
           </div>
           <div>
-            <h1 className="text-[48px] text-[#fe6b27]">30</h1>
-            Gravida vel convallis id aliquet volutpat nullam dignissim. Amet
-            parturient elementum lectus rhoncus at.
+            <h1 className="text-[#fe6b27] text-[48px] w-[30px] cursor-pointer font-bold">
+              25
+            </h1>
+            <p className="cursor-pointer">
+              technology sites around the world, from which we monitor articles
+              to supplement product information
+            </p>
           </div>
           <div>
-            <h1 className="text-[48px] text-[#fe6b27]">300</h1>
-            Sed varius ut venenatis id amet et consectetur pellentesque. Vitae
-            urna ornare vel suspendisse tincidunt.
+            <h1 className="text-[#fe6b27] text-[48px] w-[30px] cursor-pointer font-bold">
+              50
+            </h1>
+            <p className="cursor-pointer">
+              online stores where we track prices so you can compare them and
+              also see price history to avoid falling for fake discounts
+            </p>
           </div>
           <div>
-            <h1 className="text-[48px] text-[#fe6b27]">8</h1>
-            Id enim ornare lacus duis. Ac fermentum auctor cras adipiscing
-            feugiat quis convallis velit.
+            <h1 className="text-[#fe6b27] text-[48px] w-[30px] cursor-pointer font-bold">
+              6
+            </h1>
+            <p className="cursor-pointer">
+              once a day we update data on all products on our website and are
+              ready to notify you about these changes
+            </p>
           </div>
         </div>
       </div>
-      <div className="bg-[#f4efef] pl-[80px] h-[453px] flex flex-col rounded-[16px] mt-[20px] justify-center gap-[40px]">
-        <h1 className="font-bold text-[48px]">
+      <div className="flex flex-col bg-[#f4efef] h-[453px] justify-center rounded-[16px] gap-[40px] mt-[20px] pl-[80px]">
+        <h1 className="text-[48px] cursor-pointer font-bold">
           <span className="text-[#fe6b27]">Экономьте </span>
           свое время <br /> и получайте
-          <span className="text-[#fe6b27] ml-1 text-bold  ">
+          <span className="text-[#fe6b27] text-bold ml-1">
             максимум <br />
           </span>
           от ежедневных покупок
         </h1>
-        <div className="flex gap-[20px] ">
+        <div className="flex gap-[20px]">
           <button
             onClick={() => {
-              navigate("/https://play.google.com/store/games?hl=ru");
+              window.open(
+                "https://play.google.com/store/games?hl=ru",
+                "_blanc"
+              );
             }}
-            className="w-[204px] h-[61px] flex bg-black text-[white] rounded-[10px]  justify-center "
+            className="flex bg-black h-[61px] justify-center rounded-[10px] text-[white] w-[204px] cursor-pointer"
           >
             <img
-              className="w-[34px] h-[39px] mt-[10px]"
+              className="h-[39px] w-[34px] mt-[10px]"
               src="/src/assets/play.svg"
               alt=""
             />
@@ -56,9 +72,14 @@ const Install = () => {
               Доступно в <img src="/src/assets/plays.svg" alt="" />
             </div>
           </button>
-          <button className="w-[204px] h-[61px] flex bg-black text-[white] rounded-[10px]  justify-center ">
+          <button
+            onClick={() => {
+              window.open("https://www.apple.com/app-store", "_blanc");
+            }}
+            className="flex bg-black h-[61px] justify-center rounded-[10px] text-[white] w-[204px] cursor-pointer"
+          >
             <img
-              className="w-[34px] h-[39px] mt-[10px]"
+              className="h-[39px] w-[34px] mt-[10px]"
               src="/src/assets/apple.svg"
               alt=""
             />

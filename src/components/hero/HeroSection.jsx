@@ -1,6 +1,6 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-const HeroSection = () => {
+const HeroSection = ({ scrollToCategories }) => {
   return (
     <div className="app-container flex gap-[52px]">
       <div className="w-[879px] h-[308px] rounded-[10px] bg-[#f4efef] p-[30px] flex flex-col gap-[20px] mt-[48px]   ">
@@ -9,7 +9,10 @@ const HeroSection = () => {
           <span className="text-[#fe6b27]"> 2272</span> магазинaх <br />
           найди, сравни, выбирай!
         </h2>
-        <button className="w-[246px] h-[52px] bg-[#f9553c] flex items-center justify-center text-[white] rounded-[10px] ">
+        <button
+          className="w-[246px] h-[52px] bg-[#f9553c] flex items-center justify-center text-[white] rounded-[10px] "
+          onClick={scrollToCategories}
+        >
           Перейти к категориям
           <MdKeyboardArrowRight className="text-[25px] mt-[4px] ml-[3px]" />
         </button>
