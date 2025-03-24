@@ -58,7 +58,7 @@ const Header = () => {
   };
   const [favoritesCount, setFavoritesCount] = useState(0);
   const handleProfileClick = () => {
-    navigate("/profile"); // Change the route as needed
+    navigate("/profile"); 
   };
   
 
@@ -197,4 +197,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header; 
