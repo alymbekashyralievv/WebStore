@@ -4,13 +4,13 @@ import HomePage from "./pages/home-page/HomePage";
 // import NavBar from "./nav-bar/NavBar";
 import NotFound from "./pages/not-found/NotFound";
 import ProductDetails from "./components/Product-Details/ProductDetails";
-import Header from "./components/Header/Header";
 import Category from "./components/category/Category";
 import Favorite from "./components/favorite/Favorite";
 import Register from "./components/registaer/Register";
 import Cart from "./components/cart/Cart";
 
 import Footer from "./components/footer/Footer";
+import Header from "./components/Header/Header";
 
 const App = () => {
   return (

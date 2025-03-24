@@ -14,7 +14,6 @@ import { supabase } from "../../supabase";
 
 const Header = () => {
   const navigate = useNavigate();
-
   const handleProductClick = (productId) => {
     navigate(`/product/${productId}`);
   };
@@ -60,8 +59,6 @@ const Header = () => {
   const handleProfileClick = () => {
     navigate("/profile"); // Change the route as needed
   };
-  
-
 
   return (
     <div className="app-container relative">
@@ -98,7 +95,7 @@ const Header = () => {
           <button className="flex bg-[#f4efef] h-[52px] justify-center rounded-[10px] w-[52px] items-center">
             <GoHeart />
             {favoritesCount > 0 && (
-              <span className="absolute top-1 right-1 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
+              <span className="flex bg-red-500 h-5 justify-center rounded-full text-white text-xs w-5 absolute font-bold items-center right-1 top-1">
                 {favoritesCount}
               </span>
             )}
@@ -107,15 +104,14 @@ const Header = () => {
             <SlChart />
           </button>
           <button
-            className="w-[52px] h-[52px] bg-[#f4efef] rounded-[10px] flex items-center justify-center"
+            className="flex bg-[#f4efef] h-[52px] justify-center rounded-[10px] w-[52px] items-center"
             onClick={handleProfileClick}
           >
             <HiOutlineUser />
           </button>
-         
         </div>
       </header>
-      
+
       {isOpen && (
         <div className="flex bg-white p-4 rounded-[12px] shadow-lg w-[1530px] -translate-x-1/2 absolute gap-[0px] left-1/2 top-[76px] transform z-40">
           <div className="p-0 rounded-[12px] shadow-md w-1/4 max-h-[400px] ml-[100px] overflow-y-auto">
