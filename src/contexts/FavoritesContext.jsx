@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 const FavoritesContext = createContext();
 
@@ -6,25 +6,28 @@ export const FavoritesProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
 
   const addToFavorites = (product) => {
-    setFavorites((prev) => {
-      if (!prev.some((item) => item.id === product.id)) {
-        return [...prev, product];
-      }
-      return prev;
-    });
+    if (favorites.some((item) => item.id === product.id)) {
+      setFavorites(favorites.filter((item) => item.id !== product.id));
+    } else {
+      setFavorites([...favorites, product]);
+    }
   };
 
   const removeFromFavorites = (productId) => {
-    setFavorites((prev) => prev.filter((item) => item.id !== productId));
+    setFavorites(favorites.filter((item) => item.id !== productId));
   };
 
   return (
-    <FavoritesContext.Provider
-      value={{ favorites, addToFavorites, removeFromFavorites }}
-    >
+    <FavoritesContext.Provider value={{ favorites, addToFavorites, removeFromFavorites }}>
       {children}
     </FavoritesContext.Provider>
   );
 };
 
-export const useFavorites = () => useContext(FavoritesContext);
+export const useFavorites = () => {
+  const context = useContext(FavoritesContext);
+  if (!context) {
+    throw new Error("useFavorites must be used within a FavoritesProvider");
+  }
+  return context;
+};
